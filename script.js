@@ -320,7 +320,7 @@ d3.queue()
     ratioText
       .append('tspan')
       .attr('class','ratio-text')
-      .text(`dogs and cats that enter a shelter in ${stateMap.get(input)}, `);
+      .text(`dogs and cats that entered a shelter in ${stateMap.get(input)}, `);
     ratioText
       .append('tspan')
       .attr('class','ratio-text')
@@ -328,9 +328,9 @@ d3.queue()
       .attr('dy','1.4em')
       .text(function(){
         if(ratioOutcomeLive==1){
-          return `there is `
+          return `there was `
         }
-        else{ return `there are `; }
+        else{ return `there were `; }
       });
     ratioText
       .append('tspan')
@@ -342,9 +342,9 @@ d3.queue()
       .attr('class','ratio-text')
       .text(function(){
         if(ratioOutcomeLive==1){
-          return ` shelter dog or cat that has a live outcome, and `
+          return ` shelter dog or cat that had a live outcome, and `
         }
-        else{ return ` shelter dogs and cats that have a live outcome, and `; }
+        else{ return ` shelter dogs and cats that had a live outcome, and `; }
       });
     ratioText
       .append('tspan')
@@ -354,7 +354,7 @@ d3.queue()
     ratioText
       .append('tspan')
       .attr('class','ratio-text')
-      .text(`that does not.`);
+      .text(`that did not.`);
     ratioText
       .append('tspan')
       .attr('id','ratio-shelters')
