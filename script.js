@@ -91,40 +91,6 @@ d3.queue()
     .attr('value',function(d){return d; })
     .text(function(d){return d; });
 
-  // let i;
-  // const inputStates = inputG.append('span')
-  //   .attr('class','dropdown');
-  //
-  // inputStates.selectAll('options')
-  //   .data(stateMap.keys())
-  //   .enter()
-  //   .append('input')
-  //   .attr('type','radio')
-  //   .attr('id',function(d){ return d; });
-  // inputStates.selectAll('optionsLabels')
-  //   .data(stateMap.keys())
-  //   .enter()
-  //   .append('label')
-  //   .attr('class','')
-  //   .attr('for',function(d){ return d; })
-  //   .html(function(d){ return d; })
-  //   .on('click',function(d){
-  //     console.log(d);
-  //     if(i==1){
-  //       d3.select('#'+d)
-  //         .attr('checked','checked');
-  //     }
-  //   });
-  //
-  // inputStates
-  //   .on('click',function(){
-  //     i = 1;
-  //     // d.preventDefault();
-  //     // d.stopPropagation();
-  //     inputStates.classed('expanded',true);
-  //     // d3.select(`#${d.target}`).attr('checked','checked');
-  //   });
-
   function draw(input){
 
     //filter for user-input
@@ -320,7 +286,7 @@ d3.queue()
     ratioText
       .append('tspan')
       .attr('class','ratio-text')
-      .text(`dogs and cats that entered a shelter in ${stateMap.get(input)}, `);
+      .text(`animals that entered a shelter in ${stateMap.get(input)}, `);
     ratioText
       .append('tspan')
       .attr('class','ratio-text')
@@ -342,9 +308,9 @@ d3.queue()
       .attr('class','ratio-text')
       .text(function(){
         if(ratioOutcomeLive==1){
-          return ` shelter dog or cat that had a live outcome, and `
+          return ` shelter animal that had a live outcome, and `
         }
-        else{ return ` shelter dogs and cats that had a live outcome, and `; }
+        else{ return ` shelter animals that had a live outcome, and `; }
       });
     ratioText
       .append('tspan')
