@@ -1,6 +1,6 @@
 html{
-	font-family: 'Proxima Nova', Helvetica, sans-serif;
-	font-weight: 200;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: lighter;
 }
 
 .input-svg{
@@ -36,14 +36,18 @@ select {
   position: relative;
   /* display: block; */
   width: 140px;
-  height: 50px;
-  line-height: 3;
+  height: 60px;
+  /* line-height: 3; */
 	border: 1px solid black;
-  /* background: #2c3e50; */
+  background: #ffffff;
   overflow: hidden;
   border-radius: 30px;
-	padding-left: 18px;
+	padding-left: 20px;
+	font-size: 20px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: lighter;
 }
+
 select {
   width: 100%;
   height: 100%;
@@ -61,80 +65,44 @@ select::-ms-expand {
     linear-gradient(135deg, gray 50%, transparent 50%),
     linear-gradient(to right, #ccc, #ccc);
   background-position:
-    calc(100% - 23px) calc(22px),
-    calc(100% - 18px) calc(22px),
-    calc(100% - 40px) 9px;
+    calc(100% - 23px) calc(28px),
+    calc(100% - 18px) calc(28px),
+    calc(100% - 40px) 10px;
   background-size:
     5px 5px,
     5px 5px,
-    1px 32px;
+    1px 38px;
   background-repeat: no-repeat;
 }
 
-/* .select-states:focus {
-  background-image:
-    linear-gradient(45deg, green 50%, transparent 50%),
-    linear-gradient(135deg, transparent 50%, green 50%),
-    linear-gradient(to right, #ccc, #ccc);
-  background-position:
-    calc(100% - 15px) 1em,
-    calc(100% - 20px) 1em,
-    calc(100% - 2.5em) 0.5em;
-  background-size:
-    5px 5px,
-    5px 5px,
-    1px 1.5em;
-  background-repeat: no-repeat;
-  border-color: green;
-  outline: 0;
-} */
-
-
-
-/* .select-states::after {
-  content: '\25BC';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0 1em;
-  background: black;
-  pointer-events: none;
-} */
-/* Transition */
-/* .select-states:hover::after {
-  color: #f39c12;
-} */
 .select-states::after {
   -webkit-transition: .25s all ease;
   -o-transition: .25s all ease;
   transition: .25s all ease;
 }
-.select-states{
-	font-size: 20px;
-	font-family: 'Proxima Nova', Helvetica, sans-serif;
-	font-weight: 200;
-}
 
 .ratio-text{
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .module{
 	min-height: 400px;
 }
 
-#totalIntake, #totalOutcome {
+#totalIntake, #totalOutcome, #labelIntake, #labelOutcome, .labelOutcome-L, .labelOutcome-O {
 	font-size: 14px;
 }
 
-.labelOutcome-L, .labelOutcome-O{
-	font-size: 14px;
+.tooltip text{
+	font-size: 12px;
 }
 
 .source{
 	font-size: 12px;
 	text-align: center;
+	line-height: 16px;
 	width: 80%;
 	margin: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
