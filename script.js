@@ -48,9 +48,7 @@ d3.queue()
   const stateMap = d3.map(states);
 
   //create prompt using states data
-  const inputSvg = d3.select('.prompt')
-    .append('svg')
-    .attr('class','input-svg')
+  const inputSvg = d3.select('.input-svg')
     .attr('height','60px');
 
   const inputText = inputSvg.append('text')
@@ -60,11 +58,12 @@ d3.queue()
     .attr('dy','1.4em')
     .text('Which state do you live in?');
 
-  const inputG = d3.select('.prompt').append('g')
+  const inputG = d3.select('#state-form').append('g')
     .attr('class','inputGroup');
 
   const inputStates = inputG.append('select')
     .attr('class','select-states')
+    .attr('name','state')
     .on('change', function(d){
       input = d3.select('select').property('value');
       draw(input);
@@ -90,6 +89,20 @@ d3.queue()
     .attr('class','options')
     .attr('value',function(d){return d; })
     .text(function(d){return d; });
+
+  //submit with jQuery
+  var $form = $('form#state-form'),
+    url = 'https://script.google.com/macros/s/AKfycbyvroj2FBEx0MxXhhteSCBIgZMobhXTIzY3nT3FyVsPyHehWGrU/exec'
+
+  $('.select-states').on('change', function(e) {
+    e.preventDefault();
+    var jqxhr = $.ajax({
+      url: url,
+      method: "GET",
+      dataType: "json",
+      data: $form.serializeObject()
+    })
+  })
 
   function draw(input){
 
